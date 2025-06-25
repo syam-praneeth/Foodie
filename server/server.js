@@ -5,8 +5,11 @@ dotEnv.config();
 const mongoose = require("mongoose");
 const PORT = 3000;
 
+
 app.use(exp.json());
 app.use('/vendor', require('./routes/vendorRoute'));
+app.use('/firm', require('./routes/firmRoutes'));
+
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log("MongoDB connected"))
